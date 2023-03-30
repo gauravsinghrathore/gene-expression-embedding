@@ -1,1 +1,41 @@
-
+<!doctype html>
+<html>
+    <head>
+        <title>Display Embedding with Gene Expression</title>
+    </head>
+    <body>
+        <form method='POST' action='/display_embedding'>
+            <label>Select adata:</label>
+            <select name='adata_select'>
+                {% for adata_name in adata_list %}
+                <option value='{{adata_name}}'>{{adata_name}}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <label>Select embedding:</label>
+            <select name='embedding_select'>
+                <option value='X_umap'>X_umap</option>
+                <option value='X_drawgraph_fa'>X_drawgraph_fa</option>
+            </select>
+            <br><br>
+            <label>Select tissue:</label>
+            <select name='tissue_select'>
+                {% for tissue_name in tissue_list %}
+                <option value='{{tissue_name}}'>{{tissue_name}}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <label>Select day:</label>
+            <select name='day_select'>
+                {% for day_name in day_list %}
+                <option value='{{day_name}}'>{{day_name}}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <label>Enter gene name:</label>
+            <input type='text' name='gene_name' placeholder='e.g. ACTB'>
+            <br><br>
+            <input type='submit' value='Submit'>
+        </form>
+    </body>
+</html>
