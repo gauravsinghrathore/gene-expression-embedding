@@ -4,6 +4,7 @@ import pandas as pd
 
 # load adata
 adata = sc.read('path/to/adata.h5ad')
+adata2 = sc.read('path/to/adata.h5ad')
 
 # create Flask app
 app = Flask(__name__)
