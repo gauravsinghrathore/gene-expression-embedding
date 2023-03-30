@@ -1,1 +1,31 @@
-
+<!doctype html>
+<html>
+    <head>
+        <title>Embedding with Gene Expression</title>
+    </head>
+    <body>
+        <h2>Embedding Plot</h2>
+        <div>
+            <img src='https://dummyimage.com/500x500/000/fff'>
+        </div>
+        <h2>Gene Expression</h2>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cell ID</th>
+                        <th>{{ gene_name }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in gene_expression %}
+                    <tr>
+                        <td>{{ row[0] }}</td>
+                        <td>{{ row[1] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
